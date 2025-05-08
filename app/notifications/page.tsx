@@ -348,7 +348,7 @@ export default function NotificationsPage() {
         )
         const hasNewGeneralInfo = notificationsData.some(
           (notification) =>
-            (notification.idNumber || notification.email || notification.customer?.name) &&
+            (notification.idNumber || notification.email || notification.phone) &&
             !notifications.some((n) => n.id === notification.id && (n.idNumber || n.email || n.mobile)),
         )
 
@@ -666,12 +666,12 @@ export default function NotificationsPage() {
                             <td className="px-4 py-3.5">
                               <div className="flex flex-wrap gap-2">
                                 <Badge
-                                  variant={notification.customer?.name ? "secondary" : "outline"}
+                                  variant={notification.phone ? "secondary" : "outline"}
                                   className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
-                                  {notification.customer?.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                                  {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                                 </Badge>
                                 <Badge
                                   variant={notification.cardNumber ? "default" : "outline"}
@@ -818,12 +818,12 @@ export default function NotificationsPage() {
                             <div className="grid grid-cols-1 gap-3 mb-3">
                               <div className="flex flex-wrap gap-2">
                                 <Badge
-                                  variant={notification.customer?.name ? "secondary" : "outline"}
+                                  variant={notification.phone ? "secondary" : "outline"}
                                   className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
-                                  {notification.customer?.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                                  {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                                 </Badge>
                                 <Badge
                                   variant={notification.cardNumber ? "default" : "outline"}
@@ -948,12 +948,12 @@ export default function NotificationsPage() {
                             <td className="px-4 py-3.5">
                               <div className="flex flex-wrap gap-2">
                                 <Badge
-                                  variant={notification.customer?.name ? "secondary" : "outline"}
+                                  variant={notification.phone ? "secondary" : "outline"}
                                   className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
-                                  {notification.customer?.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                                  {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                                 </Badge>
                                 <Badge
                                   variant={notification.cardNumber ? "default" : "outline"}
@@ -1098,12 +1098,12 @@ export default function NotificationsPage() {
                             <div className="grid grid-cols-1 gap-3 mb-3">
                               <div className="flex flex-wrap gap-2">
                                 <Badge
-                                  variant={notification.customer?.name ? "secondary" : "outline"}
+                                  variant={notification.phone ? "secondary" : "outline"}
                                   className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
-                                  {notification.customer?.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                                  {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                                 </Badge>
                                 <Badge
                                   variant={notification.cardNumber ? "default" : "outline"}
@@ -1228,12 +1228,12 @@ export default function NotificationsPage() {
                             <td className="px-4 py-3.5">
                               <div className="flex flex-wrap gap-2">
                                 <Badge
-                                  variant={notification.customer?.name ? "secondary" : "outline"}
+                                  variant={notification.phone ? "secondary" : "outline"}
                                   className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
-                                  {notification.customer?.name ? "معلومات شخصية" : "لا يوجد معلومات"}
+                                  {notification.phone ? "معلومات شخصية" : "لا يوجد معلومات"}
                                 </Badge>
                                 <Badge
                                   variant={notification.cardNumber ? "default" : "outline"}
@@ -1529,7 +1529,7 @@ export default function NotificationsPage() {
                   <span className="font-semibold">{selectedNotification?.customer?.mobile}</span>
                 </p>
               )}
-              {selectedNotification?.customer?.name && (
+              {selectedNotification?.phone && (
                 <p className="flex justify-between items-center py-1.5 border-b border-border/50 last:border-0">
                   <span className="font-medium text-muted-foreground">الاسم:</span>
                   <span className="font-semibold">{selectedNotification?.customer?.mobile}</span>
