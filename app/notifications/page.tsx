@@ -667,7 +667,12 @@ export default function NotificationsPage() {
                               <div className="flex flex-wrap gap-2">
                                 <Badge
                                   variant={notification.phone ? "secondary" : "outline"}
-                                  className="rounded-md cursor-pointer hover:bg-secondary/80 transition-colors duration-200 shadow-sm"
+                                  className={cn(
+                                    "rounded-md cursor-pointer transition-colors duration-200 shadow-sm",
+                                    notification.phone
+                                      ? "bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700"
+                                      : "hover:bg-muted",
+                                  )}
                                   onClick={() => handleInfoClick(notification, "personal")}
                                 >
                                   <Info className="h-3 w-3 mr-1" />
